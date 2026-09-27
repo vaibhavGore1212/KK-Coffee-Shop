@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Coffee Shop Management and Online Ordering System</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Coffee Shop Management and Online Ordering System" name="keywords">
+    <meta content="Coffee Shop Management and Online Ordering System" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0 nav-bar">
+        <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
+            <a href="index.html" class="navbar-brand px-lg-4 m-0">
+                <h1 class="m-0 display-4 text-uppercase text-white">COFFEE SHOP</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav ml-auto p-4">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="service.html" class="nav-item nav-link">Service</a>
+                    <a href="menu.html" class="nav-item nav-link active">Menu</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu text-capitalize">
+                            <a href="reservation.html" class="dropdown-item">Reservation</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header mb-5 position-relative overlay-bottom">
+        <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px">
+            <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">Menu</h1>
+            <div class="d-inline-flex mb-lg-5">
+                <p class="m-0 text-white"><a class="text-white" href="">Home</a></p>
+                <p class="m-0 text-white px-2">/</p>
+                <p class="m-0 text-white">Menu</p>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Menu Start -->
+    <div class="container-fluid pt-5">
+        <div id="menuItems" class="container-fluid px-lg-5">
+            <div class="section-title">
+                <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Menu & Pricing</h4>
+                <h1 class="display-4">Explore Our Menu</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <h1 class="mb-5">Hot Coffee</h1>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-5 col-sm-4">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-1.jpg" alt="Espresso">
+                            <h5 class="menu-price">&#8377;99</h5>
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <h4>Espresso</h4>
+                            <p class="m-0">Strong, concentrated coffee</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-5 col-sm-4">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-2.jpg" alt="Americano">
+                            <h5 class="menu-price">&#8377;129</h5>
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <h4>Americano</h4>
+                            <p class="m-0">Espresso + hot water</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-5 col-sm-4">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-3.jpg" alt="Cappuccino">
+                            <h5 class="menu-price">&#8377;149</h5>
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <h4>Cappuccino</h4>
+                            <p class="m-0">Espresso + steamed milk + milk foam</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-5 col-sm-4">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-1.jpg" alt="Caffe Latte">
+                            <h5 class="menu-price">&#8377;159</h5>
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <h4>Caffe Latte</h4>
+                            <p class="m-0">Espresso + steamed milk + light foam</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-5 col-sm-4">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-2.jpg" alt="Caffe Mocha">
+                            <h5 class="menu-price">&#8377;179</h5>
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <h4>Caffe Mocha</h4>
+                            <p class="m-0">Espresso + chocolate + steamed milk</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-5 col-sm-4">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-3.jpg" alt="Flat White">
+                            <h5 class="menu-price">&#8377;169</h5>
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <h4>Flat White</h4>
+                            <p class="m-0">Espresso + finely textured steamed milk</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-5 col-sm-4">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-1.jpg" alt="Macchiato">
+                            <h5 class="menu-price">&#8377;139</h5>
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <h4>Macchiato</h4>
+                            <p class="m-0">Espresso with a small amount of milk/foam</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-5 col-sm-4">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-2.jpg" alt="Filter Coffee">
+                            <h5 class="menu-price">&#8377;109</h5>
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <h4>Filter Coffee</h4>
+                            <p class="m-0">Brewed coffee served hot</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-5 col-sm-4">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-3.jpg" alt="Black Coffee">
+                            <h5 class="menu-price">&#8377;109</h5>
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <h4>Black Coffee</h4>
+                            <p class="m-0">Hot brewed coffee without milk</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-5 col-sm-4">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-1.jpg" alt="Hazelnut Coffee">
+                            <h5 class="menu-price">&#8377;199</h5>
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <h4>Hazelnut Coffee</h4>
+                            <p class="m-0">Coffee with hazelnut flavor</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-5 col-sm-4">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-2.jpg" alt="Vanilla Latte">
+                            <h5 class="menu-price">&#8377;189</h5>
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <h4>Vanilla Latte</h4>
+                            <p class="m-0">Latte with vanilla flavor</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-5 col-sm-4">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-3.jpg" alt="Caramel Latte">
+                            <h5 class="menu-price">&#8377;189</h5>
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <h4>Caramel Latte</h4>
+                            <p class="m-0">Latte with caramel flavor</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h1 class="mb-5">Cold Coffee</h1>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-5 col-sm-4">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-1.jpg" alt="Classic Cold Coffee">
+                            <h5 class="menu-price">&#8377;129</h5>
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <h4>Classic Cold Coffee</h4>
+                            <p class="m-0">A smooth, chilled coffee blended with milk for a refreshing classic taste.</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-5 col-sm-4">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-2.jpg" alt="Iced Americano">
+                            <h5 class="menu-price">&#8377;119</h5>
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <h4>Iced Americano</h4>
+                            <p class="m-0">Espresso and chilled water poured over ice for a crisp, bold refreshment.</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-5 col-sm-4">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-3.jpg" alt="Iced Latte">
+                            <h5 class="menu-price">&#8377;149</h5>
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <h4>Iced Latte</h4>
+                            <p class="m-0">Chilled espresso and creamy milk served over ice for a smooth, mellow drink.</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-5 col-sm-4">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-1.jpg" alt="Iced Cappuccino">
+                            <h5 class="menu-price">&#8377;159</h5>
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <h4>Iced Cappuccino</h4>
+                            <p class="m-0">Espresso, cold milk, and a light foam finish served over ice.</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-5 col-sm-4">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-2.jpg" alt="Chocolate Cold Coffee">
+                            <h5 class="menu-price">&#8377;149</h5>
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <h4>Chocolate Cold Coffee</h4>
+                            <p class="m-0">A creamy iced coffee blended with smooth chocolate flavour.</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-5 col-sm-4">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-3.jpg" alt="Caramel Cold Coffee">
+                            <h5 class="menu-price">&#8377;159</h5>
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <h4>Caramel Cold Coffee</h4>
+                            <p class="m-0">Refreshing cold coffee finished with a smooth, buttery caramel flavour.</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-5 col-sm-4">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-1.jpg" alt="Vanilla Cold Coffee">
+                            <h5 class="menu-price">&#8377;159</h5>
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <h4>Vanilla Cold Coffee</h4>
+                            <p class="m-0">Chilled coffee with creamy milk and a delicate vanilla finish.</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-5 col-sm-4">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-2.jpg" alt="Hazelnut Cold Coffee">
+                            <h5 class="menu-price">&#8377;169</h5>
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <h4>Hazelnut Cold Coffee</h4>
+                            <p class="m-0">A chilled coffee blend with a rich hazelnut aroma and smooth finish.</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-5 col-sm-4">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-3.jpg" alt="Oreo Cold Coffee">
+                            <h5 class="menu-price">&#8377;179</h5>
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <h4>Oreo Cold Coffee</h4>
+                            <p class="m-0">Creamy cold coffee blended with chocolate cookie pieces for a fun treat.</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-5 col-sm-4">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-1.jpg" alt="Cold Coffee with Ice Cream">
+                            <h5 class="menu-price">&#8377;189</h5>
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <h4>Cold Coffee with Ice Cream</h4>
+                            <p class="m-0">A refreshing cold coffee topped with a scoop of creamy ice cream.</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-5 col-sm-4">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-2.jpg" alt="Chocolate Frappe">
+                            <h5 class="menu-price">&#8377;179</h5>
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <h4>Chocolate Frappe</h4>
+                            <p class="m-0">A rich, blended iced coffee with chocolate, milk, and a creamy finish.</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-5 col-sm-4">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-3.jpg" alt="Caramel Frappe">
+                            <h5 class="menu-price">&#8377;189</h5>
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <h4>Caramel Frappe</h4>
+                            <p class="m-0">A smooth blended coffee drink finished with sweet caramel flavour.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h1 class="mb-5">Snacks</h1>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-5 col-sm-4">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-1.jpg" alt="French Fries">
+                            <h5 class="menu-price">&#8377;99</h5>
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <h4>French Fries</h4>
+                            <p class="m-0">Crispy golden potato fries served warm with a flavourful dip.</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-5 col-sm-4">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-2.jpg" alt="Peri Peri Fries">
+                            <h5 class="menu-price">&#8377;119</h5>
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <h4>Peri Peri Fries</h4>
+                            <p class="m-0">Crispy fries tossed with spicy and flavourful peri peri seasoning.</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-5 col-sm-4">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-3.jpg" alt="Cheese Fries">
+                            <h5 class="menu-price">&#8377;139</h5>
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <h4>Cheese Fries</h4>
+                            <p class="m-0">Golden fries topped with creamy melted cheese.</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-5 col-sm-4">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-1.jpg" alt="Veg Sandwich">
+                            <h5 class="menu-price">&#8377;129</h5>
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <h4>Veg Sandwich</h4>
+                            <p class="m-0">Fresh vegetables, cheese, and flavourful sauces served between toasted bread.</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-5 col-sm-4">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-2.jpg" alt="Cheese Sandwich">
+                            <h5 class="menu-price">&#8377;139</h5>
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <h4>Cheese Sandwich</h4>
+                            <p class="m-0">A grilled sandwich filled with melted cheese and tasty seasoning.</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-5 col-sm-4">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-3.jpg" alt="Grilled Veg Sandwich">
+                            <h5 class="menu-price">&#8377;149</h5>
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <h4>Grilled Veg Sandwich</h4>
+                            <p class="m-0">Toasted bread filled with grilled vegetables, cheese, and special sauce.</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-5 col-sm-4">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-1.jpg" alt="Paneer Sandwich">
+                            <h5 class="menu-price">&#8377;169</h5>
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <h4>Paneer Sandwich</h4>
+                            <p class="m-0">A grilled sandwich filled with spiced paneer, vegetables, and creamy sauce.</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-5 col-sm-4">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-2.jpg" alt="Garlic Bread">
+                            <h5 class="menu-price">&#8377;119</h5>
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <h4>Garlic Bread</h4>
+                            <p class="m-0">Toasted bread topped with garlic butter and aromatic herbs.</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-5 col-sm-4">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-3.jpg" alt="Cheese Garlic Bread">
+                            <h5 class="menu-price">&#8377;139</h5>
+                        </div>
+                        <div class="col-7 col-sm-8">
+                            <h4>Cheese Garlic Bread</h4>
+                            <p class="m-0">Garlic bread topped with melted cheese and fragrant herbs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Menu End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top">
+        <div class="row mx-0 pt-5 px-sm-3 px-lg-5 mt-4">
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Quick Links</h4>
+                <p><a class="text-white" href="index.html"><i class="fa fa-angle-right mr-2"></i>Home</a></p>
+                <p><a class="text-white" href="about.html"><i class="fa fa-angle-right mr-2"></i>About</a></p>
+                <p><a class="text-white" href="service.html"><i class="fa fa-angle-right mr-2"></i>Service</a></p>
+                <p><a class="text-white" href="menu.html"><i class="fa fa-angle-right mr-2"></i>Menu</a></p>
+                <p><a class="text-white" href="reservation.html"><i class="fa fa-angle-right mr-2"></i>Reservation</a></p>
+                <p class="m-0"><a class="text-white" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contact</a></p>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Follow Us</h4>
+                <div class="d-flex justify-content-start">
+                    <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="https://twitter.com/i/flow/login" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="https://www.facebook.com/login/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="https://accounts.google.com/ServiceLogin?service=youtube" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-lg btn-outline-light btn-lg-square" href="https://www.instagram.com/accounts/login/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Open Hours</h4>
+                <div>
+                    <h6 class="text-white text-uppercase">Monday - Friday</h6>
+                    <p>7.00 AM - 9.00 PM</p>
+                    <h6 class="text-white text-uppercase">Saturday - Sunday</h6>
+                    <p>7.00 AM - 10.00 PM</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Have a question?</h4>
+                <p class="mb-2"><i class="fa fa-phone-alt mr-2"></i>090-080-0760</p>
+                <p class="mb-2"><i class="fa fa-envelope mr-2"></i>hello@company.com</p>
+                <a class="text-white" href="contact.html">Contact Us <i class="fa fa-angle-right ml-2"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
