@@ -32,15 +32,34 @@
         return false;
     });
 
-    // Add an order link to every menu item.
+    // Add menu items to a cart that persists between the menu and checkout pages.
     $('#menuItems .row.align-items-center').each(function () {
         var itemName = $(this).find('h4').text().trim();
-        var itemLink = 'reservation.html?item=' + encodeURIComponent(itemName);
         $('<a>', {
             class: 'btn btn-primary btn-sm mt-2',
-            href: itemLink,
-            text: 'Order Now'
+            href: '#',
+            text: 'Add to Order',
+            'data-order-item': itemName
         }).insertAfter($(this).find('p.m-0'));
+    });
+
+    $('#menuItems').on('click', '[data-order-item]', function (event) {
+        event.preventDefault();
+        var cartKey = 'coffeeShopCart';
+        var cart = JSON.parse(localStorage.getItem(cartKey) || '[]');
+        var itemName = $(this).attr('data-order-item');
+        var cartItem = cart.find(function (item) {
+            return item.name === itemName;
+        });
+
+        if (cartItem) {
+            cartItem.quantity = Math.min(cartItem.quantity + 1, 99);
+        } else {
+            cart.push({ name: itemName, quantity: 1 });
+        }
+
+        localStorage.setItem(cartKey, JSON.stringify(cart));
+        window.location.href = 'order.html';
     });
     
 

@@ -15,14 +15,16 @@ $(function () {
             $this.prop("disabled", true);
 
             $.ajax({
-                url: "contact.php",
+                url: "/api/contact",
                 type: "POST",
-                data: {
+                contentType: "application/json",
+                dataType: "json",
+                data: JSON.stringify({
                     name: name,
                     email: email,
                     subject: subject,
                     message: message
-                },
+                }),
                 cache: false,
                 success: function () {
                     $('#success').html("<div class='alert alert-success'>");
@@ -34,11 +36,15 @@ $(function () {
                             .append('</div>');
                     $('#contactForm').trigger("reset");
                 },
-                error: function () {
+                error: function (xhr) {
                     $('#success').html("<div class='alert alert-danger'>");
                     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                             .append("</button>");
-                    $('#success > .alert-danger').append($("<strong>").text("Sorry " + name + ", it seems that our mail server is not responding. Please try again later!"));
+                    var errorMessage = "Sorry " + name + ", your message could not be saved. Please try again.";
+                    if (xhr.responseJSON && xhr.responseJSON.error) {
+                        errorMessage = xhr.responseJSON.error;
+                    }
+                    $('#success > .alert-danger').append($("<strong>").text(errorMessage));
                     $('#success > .alert-danger').append('</div>');
                     $('#contactForm').trigger("reset");
                 },
