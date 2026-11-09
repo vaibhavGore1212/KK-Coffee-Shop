@@ -42,13 +42,9 @@
                     <a href="about.html" class="nav-item nav-link">About</a>
                     <a href="service.html" class="nav-item nav-link">Service</a>
                     <a href="menu.html" class="nav-item nav-link">Menu</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu text-capitalize">
-                            <a href="reservation.html" class="dropdown-item active">Reservation</a>
-                        </div>
-                    </div>
+                    <a href="reservation.html" class="nav-item nav-link active">Reservation</a>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="login.html" class="nav-item nav-link">Login</a>
                 </div>
             </div>
         </nav>
@@ -94,15 +90,7 @@
                         <div class="text-center p-5" style="background: rgba(51, 33, 29, .8);">
                             <h1 class="text-white mb-4 mt-5">Book Your Table</h1>
                             <div id="reservationFeedback" aria-live="polite"></div>
-                            <form class="mb-5" id="reservationForm">
-                                <div class="form-group">
-                                    <input type="text" class="form-control bg-transparent border-primary p-4" name="name" placeholder="Name"
-                                        required="required" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control bg-transparent border-primary p-4" name="email" placeholder="Email"
-                                        required="required" />
-                                </div>
+                            <form class="mb-5" id="reservationForm" novalidate>
                                 <div class="form-group">
                                     <div class="date" id="date" data-target-input="nearest">
                                         <input type="text" class="form-control bg-transparent border-primary p-4 datetimepicker-input" name="date" placeholder="Date" data-target="#date" data-toggle="datetimepicker" required="required" />

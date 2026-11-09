@@ -6,6 +6,17 @@ $(function () {
     var feedback = $('#orderFeedback');
     var menuPrices = {};
     var cart = readCart();
+    var currentUser = null;
+    var authChecked = false;
+
+    try {
+        var savedDraft = JSON.parse(sessionStorage.getItem('coffeeShopCheckoutDraft') || '{}');
+        $('#deliveryAddress').val(savedDraft.delivery_address || '');
+        $('#orderInstructions').val(savedDraft.special_instructions || '');
+        sessionStorage.removeItem('coffeeShopCheckoutDraft');
+    } catch (_error) {
+        sessionStorage.removeItem('coffeeShopCheckoutDraft');
+    }
 
     function readCart() {
         try {
@@ -19,6 +30,33 @@ $(function () {
     function saveCart() {
         localStorage.setItem(cartKey, JSON.stringify(cart));
     }
+
+    function showLogin() {
+        sessionStorage.setItem('coffeeShopCheckoutDraft', JSON.stringify({
+            delivery_address: $('#deliveryAddress').val(),
+            special_instructions: $('#orderInstructions').val()
+        }));
+        window.location.href = 'login.html?next=order.html';
+    }
+
+    fetch('/api/auth/me')
+        .then(function (response) {
+            if (!response.ok) {
+                throw new Error('Could not check your login status. Please refresh and try again.');
+            }
+            return response.json();
+        })
+        .then(function (data) {
+            if (data.authenticated) {
+                currentUser = data.user;
+            }
+            authChecked = true;
+            renderCart();
+        })
+        .catch(function () {
+            authChecked = true;
+            renderCart();
+        });
 
     function renderCart() {
         orderItems.empty();
@@ -76,7 +114,7 @@ $(function () {
         });
 
         orderTotal.text('₹' + total);
-        placeOrderButton.prop('disabled', cart.length === 0);
+        placeOrderButton.prop('disabled', cart.length === 0 || !authChecked);
     }
 
     fetch('/api/menu')
@@ -105,14 +143,20 @@ $(function () {
 
     $('#orderForm').on('submit', function (event) {
         event.preventDefault();
+        if (!currentUser) {
+            showLogin();
+            return;
+        }
+        if (!this.reportValidity()) {
+            return;
+        }
+
         feedback.empty();
         placeOrderButton.prop('disabled', true);
 
         var formValues = Object.fromEntries(new FormData(this).entries());
         var payload = {
-            customer_name: formValues.customer_name,
-            email: formValues.email,
-            phone: formValues.phone,
+            delivery_address: formValues.delivery_address,
             special_instructions: formValues.special_instructions,
             items: cart.map(function (item) {
                 return { name: item.name, quantity: item.quantity };
@@ -127,6 +171,9 @@ $(function () {
             .then(function (response) {
                 return response.json().then(function (data) {
                     if (!response.ok) {
+                        if (response.status === 401) {
+                            showLogin();
+                        }
                         throw new Error(data.error || 'Your order could not be saved.');
                     }
                     return data;
@@ -140,6 +187,8 @@ $(function () {
                 }));
                 cart = [];
                 saveCart();
+                $('#deliveryAddress, #orderInstructions').val('');
+                sessionStorage.removeItem('coffeeShopCheckoutDraft');
                 renderCart();
             })
             .catch(function (error) {

@@ -45,21 +45,70 @@
 
     $('#menuItems').on('click', '[data-order-item]', function (event) {
         event.preventDefault();
-        var cartKey = 'coffeeShopCart';
-        var cart = JSON.parse(localStorage.getItem(cartKey) || '[]');
-        var itemName = $(this).attr('data-order-item');
-        var cartItem = cart.find(function (item) {
-            return item.name === itemName;
-        });
+        var addButton = $(this);
+        var itemName = addButton.attr('data-order-item');
+        addButton.prop('disabled', true);
 
-        if (cartItem) {
-            cartItem.quantity = Math.min(cartItem.quantity + 1, 99);
-        } else {
-            cart.push({ name: itemName, quantity: 1 });
-        }
+        fetch('/api/auth/me')
+            .then(function (response) {
+                if (!response.ok) {
+                    throw new Error('Could not check your login. Please try again.');
+                }
+                return response.json();
+            })
+            .then(function (data) {
+                if (!data.authenticated) {
+                    var alertBox = $('<div>', {
+                        id: 'menuLoginAlert',
+                        class: 'alert alert-warning d-flex align-items-center justify-content-between',
+                        role: 'alert'
+                    });
+                    $('<span>', { text: 'Please log in first to add items to your order.' }).appendTo(alertBox);
+                    $('<button>', {
+                        class: 'btn btn-warning ml-3',
+                        type: 'button',
+                        text: 'OK'
+                    }).on('click', function () {
+                        window.location.href = 'login.html?next=menu.html';
+                    }).appendTo(alertBox);
+                    $('#menuLoginAlert').remove();
+                    $('#menuItems .section-title').after(alertBox);
+                    return;
+                }
 
-        localStorage.setItem(cartKey, JSON.stringify(cart));
-        window.location.href = 'order.html';
+                var cartKey = 'coffeeShopCart';
+                var cart = [];
+                try {
+                    var savedCart = JSON.parse(localStorage.getItem(cartKey) || '[]');
+                    cart = Array.isArray(savedCart) ? savedCart : [];
+                } catch (_error) {
+                    cart = [];
+                }
+                var cartItem = cart.find(function (item) {
+                    return item.name === itemName;
+                });
+
+                if (cartItem) {
+                    cartItem.quantity = Math.min(cartItem.quantity + 1, 99);
+                } else {
+                    cart.push({ name: itemName, quantity: 1 });
+                }
+
+                localStorage.setItem(cartKey, JSON.stringify(cart));
+                window.location.href = 'order.html';
+            })
+            .catch(function (error) {
+                var alertBox = $('<div>', {
+                    class: 'alert alert-danger',
+                    role: 'alert',
+                    text: error.message
+                });
+                $('#menuLoginAlert').remove();
+                $('#menuItems .section-title').after(alertBox);
+            })
+            .finally(function () {
+                addButton.prop('disabled', false);
+            });
     });
     
 
